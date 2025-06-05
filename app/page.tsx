@@ -40,7 +40,7 @@ export default function Home() {
           </div>
           <div className='flex flex-col sm:flex-row gap-5'>
             <PrimaryButton>
-              <Link href='/'>Explore Packages</Link>
+              <Link href='/packages'>Explore Packages</Link>
             </PrimaryButton>
             <SecondaryButton className='text-white border-white'>
               <Link target='_blank' href={WHATSAPP_LINK}>
