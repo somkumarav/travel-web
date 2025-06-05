@@ -4,7 +4,7 @@ import { WHATSAPP_LINK } from "../lib/links";
 
 export const SiteHeader = () => {
   return (
-    <header className='sticky top-0 z-50 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 shadow-sm py-2'>
+    <header className='sticky top-0 z-50 w-full bg-[#f8f7f4]/95 backdrop-blur supports-[backdrop-filter]:bg-[#f8f7f4]/60 shadow-sm py-2'>
       <div className='container flex items-center'>
         <Link href='/'>
           <Image

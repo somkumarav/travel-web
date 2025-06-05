@@ -71,7 +71,7 @@ export default function AboutPage() {
       </section>
 
       {/* Main content section */}
-      <section className='py-24 bg-white'>
+      <section className='py-24 bg-[#f8f7f4]'>
         <div className='container mx-auto px-4 max-w-4xl'>
           <div className='prose prose-lg max-w-none'>
             <p className='text-xl leading-relaxed mb-8 text-muted-foreground'>
@@ -99,7 +99,7 @@ export default function AboutPage() {
       <section className='py-24 bg-gradient-to-r from-brand-green/[0.02] to-brand-blue/[0.02]'>
         <div className='container mx-auto px-4'>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
-            <div className='group bg-white p-8 rounded-2xl shadow-sm transition-all duration-300 hover:shadow-lg'>
+            <div className='group bg-[#f8f7f4] p-8 rounded-2xl shadow-sm transition-all duration-300 hover:shadow-lg'>
               <div className='flex items-center mb-6'>
                 <div className='bg-brand-green/10 w-16 h-16 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform'>
                   <span className='text-3xl'>🌍</span>
@@ -115,7 +115,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className='group bg-white p-8 rounded-2xl shadow-sm transition-all duration-300 hover:shadow-lg'>
+            <div className='group bg-[#f8f7f4] p-8 rounded-2xl shadow-sm transition-all duration-300 hover:shadow-lg'>
               <div className='flex items-center mb-6'>
                 <div className='bg-brand-blue/10 w-16 h-16 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform'>
                   <span className='text-3xl'>🚀</span>
@@ -153,7 +153,7 @@ export default function AboutPage() {
       </section>
 
       {/* Features Grid */}
-      <section className='py-24 bg-white'>
+      <section className='py-24 bg-[#f8f7f4]'>
         <div className='container mx-auto px-4'>
           <h2 className='text-4xl font-bold mb-16 text-center bg-gradient-to-r from-brand-green to-brand-blue bg-clip-text text-transparent'>
             What Makes Zenvia Different?
@@ -179,7 +179,7 @@ export default function AboutPage() {
       {/* Testimonial section */}
       <section className='py-24 bg-gradient-to-r from-brand-green/[0.02] to-brand-blue/[0.02]'>
         <div className='container mx-auto px-4'>
-          <div className='max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-sm relative'>
+          <div className='max-w-3xl mx-auto bg-[#f8f7f4] p-8 rounded-2xl shadow-sm relative'>
             <div className='absolute -top-6 left-8 w-12 h-12 bg-gradient-to-r from-brand-green to-brand-blue rounded-xl flex items-center justify-center'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
