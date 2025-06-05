@@ -4,7 +4,7 @@ import { LINKS } from "../lib/links";
 
 export const SiteHeader = () => {
   return (
-    <header className='sticky top-0 z-50 w-full bg-[#f8f7f4]/95 backdrop-blur-sm supports-backdrop-filter:bg-[#f8f7f4]/60 shadow-xs py-2'>
+    <header className='sticky top-0 z-50 w-full bg-off-white/95 backdrop-blur-sm supports-backdrop-filter:bg-off-white/60 shadow-xs py-2'>
       <div className='container flex items-center'>
         <Link href='/'>
           <Image

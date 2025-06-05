@@ -52,7 +52,7 @@ export default function Home() {
       </section>
 
       {/* Why Travel with Zenvia section */}
-      <section className='py-24 bg-[#f8f7f4]'>
+      <section className='py-24 bg-off-white'>
         <div className='container mx-auto px-4'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl md:text-5xl font-bold mb-6 travel-gradient-text'>
@@ -226,7 +226,7 @@ export default function Home() {
       </section>
 
       {/* Special Offers section */}
-      <section className='py-24 bg-[#f8f7f4]'>
+      <section className='py-24 bg-off-white'>
         <div className='container mx-auto px-4'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl md:text-5xl font-bold mb-6 travel-gradient-text'>
@@ -342,7 +342,7 @@ export default function Home() {
           </div>
 
           <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-            <div className='bg-[#f8f7f4] p-8 rounded-2xl shadow-md relative'>
+            <div className='bg-off-white p-8 rounded-2xl shadow-md relative'>
               <div className='absolute -top-5 left-8 w-10 h-10 bg-secondary rounded-full flex items-center justify-center'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -377,7 +377,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className='bg-[#f8f7f4] p-8 rounded-2xl shadow-md relative'>
+            <div className='bg-off-white p-8 rounded-2xl shadow-md relative'>
               <div className='absolute -top-5 left-8 w-10 h-10 bg-secondary rounded-full flex items-center justify-center'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -412,7 +412,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className='bg-[#f8f7f4] p-8 rounded-2xl shadow-md relative'>
+            <div className='bg-off-white p-8 rounded-2xl shadow-md relative'>
               <div className='absolute -top-5 left-8 w-10 h-10 bg-secondary rounded-full flex items-center justify-center'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -452,7 +452,7 @@ export default function Home() {
       </section>
 
       {/* Easy Booking Section */}
-      <section className='py-24 bg-[#f8f7f4]'>
+      <section className='py-24 bg-off-white'>
         <div className='container mx-auto px-4'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl md:text-5xl font-bold mb-6 travel-gradient-text'>
@@ -672,16 +672,16 @@ export default function Home() {
             <div>
               <h3 className='text-lg font-semibold mb-4'>We Accept</h3>
               <div className='flex flex-wrap gap-2'>
-                <div className='bg-[#f8f7f4] text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
+                <div className='bg-off-white text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
                   VISA
                 </div>
-                <div className='bg-[#f8f7f4] text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
+                <div className='bg-off-white text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
                   MASTERCARD
                 </div>
-                <div className='bg-[#f8f7f4] text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
+                <div className='bg-off-white text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
                   AMEX
                 </div>
-                <div className='bg-[#f8f7f4] text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
+                <div className='bg-off-white text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
                   PAYPAL
                 </div>
               </div>
