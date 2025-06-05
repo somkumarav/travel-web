@@ -13,11 +13,7 @@ import {
 } from "lucide-react";
 import { getPackageById, getRelatedPackages } from "@/lib/data";
 // Import the button variants at the top of the file
-import {
-  PrimaryButton,
-  OutlineButton,
-  GhostButton,
-} from "@/components/ui/button-variants";
+import { OutlineButton, GhostButton } from "@/components/ui/button-variants";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { LINKS } from "../../../lib/links";
