@@ -12,10 +12,14 @@ import { PrimaryButton, GhostButton } from "@/components/ui/button-variants";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
+// Calculate min and max prices from data
+const minPrice = Math.min(...travelPackages.map((pkg) => pkg.price));
+const maxPrice = Math.max(...travelPackages.map((pkg) => pkg.price));
+
 export default function PackagesPage() {
   // State for filters
   const [searchQuery, setSearchQuery] = useState("");
-  const [priceRange, setPriceRange] = useState([500, 5000]);
+  const [priceRange, setPriceRange] = useState([minPrice, maxPrice]);
   const [selectedDurations, setSelectedDurations] = useState<string[]>([]);
   const [filteredPackages, setFilteredPackages] = useState(travelPackages);
 
@@ -30,9 +34,9 @@ export default function PackagesPage() {
     { id: "15+", label: "15+ days" },
   ];
 
-  // Function to convert price string to number
-  const getPriceValue = (priceStr: string): number => {
-    return Number.parseInt(priceStr.replace(/[^0-9]/g, ""), 10);
+  // Function to format price with rupee symbol and commas
+  const formatPrice = (price: number) => {
+    return `₹${price.toLocaleString("en-IN")}`;
   };
 
   // Function to check if a package falls within a duration range
@@ -70,8 +74,7 @@ export default function PackagesPage() {
 
     // Apply price filter
     results = results.filter((pkg) => {
-      const price = getPriceValue(pkg.price);
-      return price >= priceRange[0] && price <= priceRange[1];
+      return pkg.price >= priceRange[0] && pkg.price <= priceRange[1];
     });
 
     // Apply duration filter
@@ -169,18 +172,18 @@ export default function PackagesPage() {
                   <div className='space-y-6'>
                     <Slider
                       value={priceRange}
-                      min={500}
-                      max={5000}
-                      step={100}
+                      min={minPrice}
+                      max={maxPrice}
+                      step={10000}
                       className='py-4'
                       onValueChange={setPriceRange}
                     />
                     <div className='flex justify-between'>
                       <span className='text-primary font-medium'>
-                        ${priceRange[0]}
+                        {formatPrice(priceRange[0])}
                       </span>
                       <span className='text-primary font-medium'>
-                        ${priceRange[1]}
+                        {formatPrice(priceRange[1])}
                       </span>
                     </div>
                   </div>
@@ -265,7 +268,7 @@ export default function PackagesPage() {
 
                           <div className='travel-card-footer'>
                             <div className='travel-card-price text-primary'>
-                              {pkg.price}
+                              {formatPrice(pkg.price)}
                             </div>
                             <div className='travel-card-duration bg-primary/10 text-primary'>
                               <Calendar className='h-3 w-3 inline-block mr-1' />

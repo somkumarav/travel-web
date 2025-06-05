@@ -5,7 +5,7 @@ export type Package = {
   title: string;
   description: string;
   longDescription?: string;
-  price: string;
+  price: number;
   duration: string;
   location: string;
   category: string;
@@ -33,7 +33,7 @@ export const travelPackages: Package[] = [
     description: "Experience the beauty of Bali with our all-inclusive package",
     longDescription:
       "Immerse yourself in the stunning landscapes and rich culture of Bali. This comprehensive package includes luxury accommodations, guided tours to ancient temples, relaxing spa treatments, and exciting outdoor activities. Enjoy pristine beaches, lush rice terraces, and vibrant local markets.",
-    price: "$1,299",
+    price: 129900,
     duration: "7 days",
     location: "Bali, Indonesia",
     category: "Beach",
@@ -123,7 +123,7 @@ export const travelPackages: Package[] = [
       "Discover the serenity of the Swiss Alps with luxury accommodations",
     longDescription:
       "Escape to the breathtaking Swiss Alps for a rejuvenating mountain retreat. Stay in luxurious alpine lodges, enjoy panoramic views, and experience the perfect blend of adventure and relaxation. From hiking scenic trails to indulging in world-class cuisine, this package offers an unforgettable mountain experience.",
-    price: "$2,199",
+    price: 219900,
     duration: "8 days",
     location: "Swiss Alps, Switzerland",
     category: "Adventure",
@@ -216,7 +216,7 @@ export const travelPackages: Package[] = [
       "Witness the majestic wildlife of Africa on an unforgettable journey",
     longDescription:
       "Embark on the adventure of a lifetime with our African Safari Experience. Witness the incredible wildlife in their natural habitat, stay in luxurious safari lodges, and immerse yourself in the breathtaking landscapes of Africa. This carefully crafted itinerary offers the perfect balance of wildlife viewing, cultural experiences, and relaxation.",
-    price: "$2,499",
+    price: 249900,
     duration: "9 days",
     location: "Kenya & Tanzania",
     category: "Wildlife",
@@ -316,7 +316,7 @@ export const travelPackages: Package[] = [
     description: "Experience the rich traditions and history of Japan",
     longDescription:
       "Dive deep into the fascinating culture of Japan with our immersive tour. From ancient temples to modern cities, experience the perfect blend of tradition and innovation. Enjoy authentic cuisine, participate in traditional ceremonies, and witness the breathtaking beauty of Japan's landscapes.",
-    price: "$2,799",
+    price: 279900,
     duration: "12 days",
     location: "Japan",
     category: "Cultural",
@@ -434,7 +434,7 @@ export const travelPackages: Package[] = [
       "Explore the beautiful islands of Greece with crystal clear waters",
     longDescription:
       "Experience the magic of the Greek islands with our island-hopping adventure. From the iconic white-washed buildings of Santorini to the vibrant nightlife of Mykonos, discover the unique charm of each island. Enjoy crystal-clear waters, delicious Mediterranean cuisine, and unforgettable sunsets.",
-    price: "$1,999",
+    price: 199900,
     duration: "10 days",
     location: "Greece",
     category: "Beach",
@@ -540,7 +540,7 @@ export const travelPackages: Package[] = [
       "Journey through the world's largest rainforest and discover exotic wildlife",
     longDescription:
       "Embark on an unforgettable expedition into the heart of the Amazon rainforest. Experience the incredible biodiversity, meet indigenous communities, and navigate the mighty Amazon River. Stay in eco-friendly lodges, spot exotic wildlife, and learn about conservation efforts in this vital ecosystem.",
-    price: "$2,399",
+    price: 239900,
     duration: "8 days",
     location: "Brazil",
     category: "Adventure",
@@ -632,7 +632,7 @@ export const travelPackages: Package[] = [
     description: "Witness the magical aurora borealis in the Arctic Circle",
     longDescription:
       "Experience the wonder of the Northern Lights on this magical Arctic adventure. Stay in glass igloos and cozy cabins, go dog sledding through snowy forests, and chase the elusive aurora borealis. This winter wonderland offers a perfect mix of adventure, relaxation, and natural spectacles.",
-    price: "$3,299",
+    price: 329900,
     duration: "6 days",
     location: "Iceland",
     category: "Adventure",
