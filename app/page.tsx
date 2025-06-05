@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Play, MapPin, Calendar, Star, Check, ArrowRight } from "lucide-react";
+import { MapPin, Calendar, Star, Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   PrimaryButton,
@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/button-variants";
 import { Card, CardContent } from "@/components/ui/card";
 import { getFeaturedPackages } from "@/lib/data";
-import { WHATSAPP_LINK } from "../lib/links";
+import { LINKS } from "../lib/links";
 
 export default function Home() {
   const packages = getFeaturedPackages(4);
@@ -18,7 +18,7 @@ export default function Home() {
     <main className='flex min-h-screen flex-col'>
       {/* Hero section with video */}
       <section className='relative h-screen w-full overflow-hidden'>
-        <div className='absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 z-10' />
+        <div className='absolute inset-0 bg-linear-to-b from-black/50 via-black/30 to-black/60 z-10' />
         <video
           className='absolute inset-0 w-full h-full object-cover'
           src='/landing-showcase.mp4'
@@ -43,7 +43,7 @@ export default function Home() {
               <Link href='/packages'>Explore Packages</Link>
             </PrimaryButton>
             <SecondaryButton className='text-white border-white'>
-              <Link target='_blank' href={WHATSAPP_LINK}>
+              <Link target='_blank' href={LINKS.WHATSAPP}>
                 Contact Us
               </Link>
             </SecondaryButton>
@@ -172,7 +172,7 @@ export default function Home() {
                       src={pkg.image || "/placeholder.svg"}
                       alt={pkg.title}
                     />
-                    <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80'></div>
+                    <div className='absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-80'></div>
                   </div>
                   <div className='travel-card-content'>
                     <div className='travel-card-location'>
@@ -261,15 +261,15 @@ export default function Home() {
                     </p>
                     <ul className='space-y-2 mb-4'>
                       <li className='flex items-start'>
-                        <Check className='h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5' />
+                        <Check className='h-5 w-5 text-primary mr-2 shrink-0 mt-0.5' />
                         <span>Valid on all international packages</span>
                       </li>
                       <li className='flex items-start'>
-                        <Check className='h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5' />
+                        <Check className='h-5 w-5 text-primary mr-2 shrink-0 mt-0.5' />
                         <span>No hidden fees or charges</span>
                       </li>
                       <li className='flex items-start'>
-                        <Check className='h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5' />
+                        <Check className='h-5 w-5 text-primary mr-2 shrink-0 mt-0.5' />
                         <span>
                           Free cancellation up to 30 days before departure
                         </span>
@@ -305,15 +305,15 @@ export default function Home() {
                     </p>
                     <ul className='space-y-2 mb-4'>
                       <li className='flex items-start'>
-                        <Check className='h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5' />
+                        <Check className='h-5 w-5 text-primary mr-2 shrink-0 mt-0.5' />
                         <span>Valid on all packages over 5 days</span>
                       </li>
                       <li className='flex items-start'>
-                        <Check className='h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5' />
+                        <Check className='h-5 w-5 text-primary mr-2 shrink-0 mt-0.5' />
                         <span>Includes all accommodations and activities</span>
                       </li>
                       <li className='flex items-start'>
-                        <Check className='h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5' />
+                        <Check className='h-5 w-5 text-primary mr-2 shrink-0 mt-0.5' />
                         <span>Special group activities included</span>
                       </li>
                     </ul>

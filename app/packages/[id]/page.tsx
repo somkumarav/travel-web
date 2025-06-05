@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/button-variants";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { WHATSAPP_LINK } from "../../../lib/links";
+import { LINKS } from "../../../lib/links";
 
 export default function PackageDetail({ params }: { params: { id: string } }) {
   const packageData = getPackageById(params.id);
@@ -42,7 +42,7 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
     <main className='flex min-h-screen flex-col'>
       {/* Hero section */}
       <section className='relative h-[60vh] w-full overflow-hidden'>
-        <div className='absolute inset-0 bg-gradient-to-b from-black/60 to-black/30 z-10' />
+        <div className='absolute inset-0 bg-linear-to-b from-black/60 to-black/30 z-10' />
         <Image
           height={0}
           width={0}
@@ -117,9 +117,9 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
                   <div>
                     <h3 className='text-2xl font-bold mb-6'>Tour Highlights</h3>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-                      <Card className='border-none shadow-sm hover:shadow-md transition-all duration-300'>
+                      <Card className='border-none shadow-xs hover:shadow-md transition-all duration-300'>
                         <CardContent className='p-6 flex items-start'>
-                          <Bed className='h-6 w-6 mr-4 text-primary flex-shrink-0' />
+                          <Bed className='h-6 w-6 mr-4 text-primary shrink-0' />
                           <div>
                             <h4 className='font-semibold text-lg mb-1'>
                               Accommodation
@@ -130,9 +130,9 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
                           </div>
                         </CardContent>
                       </Card>
-                      <Card className='border-none shadow-sm hover:shadow-md transition-all duration-300'>
+                      <Card className='border-none shadow-xs hover:shadow-md transition-all duration-300'>
                         <CardContent className='p-6 flex items-start'>
-                          <Utensils className='h-6 w-6 mr-4 text-primary flex-shrink-0' />
+                          <Utensils className='h-6 w-6 mr-4 text-primary shrink-0' />
                           <div>
                             <h4 className='font-semibold text-lg mb-1'>
                               Meals
@@ -143,9 +143,9 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
                           </div>
                         </CardContent>
                       </Card>
-                      <Card className='border-none shadow-sm hover:shadow-md transition-all duration-300'>
+                      <Card className='border-none shadow-xs hover:shadow-md transition-all duration-300'>
                         <CardContent className='p-6 flex items-start'>
-                          <Car className='h-6 w-6 mr-4 text-primary flex-shrink-0' />
+                          <Car className='h-6 w-6 mr-4 text-primary shrink-0' />
                           <div>
                             <h4 className='font-semibold text-lg mb-1'>
                               Transportation
@@ -156,9 +156,9 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
                           </div>
                         </CardContent>
                       </Card>
-                      <Card className='border-none shadow-sm hover:shadow-md transition-all duration-300'>
+                      <Card className='border-none shadow-xs hover:shadow-md transition-all duration-300'>
                         <CardContent className='p-6 flex items-start'>
-                          <Wifi className='h-6 w-6 mr-4 text-primary flex-shrink-0' />
+                          <Wifi className='h-6 w-6 mr-4 text-primary shrink-0' />
                           <div>
                             <h4 className='font-semibold text-lg mb-1'>
                               Connectivity
@@ -209,7 +209,7 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
                             strokeWidth='2'
                             strokeLinecap='round'
                             strokeLinejoin='round'
-                            className='h-6 w-6 mr-3 text-green-500 flex-shrink-0'
+                            className='h-6 w-6 mr-3 text-green-500 shrink-0'
                           >
                             <polyline points='20 6 9 17 4 12'></polyline>
                           </svg>
@@ -236,7 +236,7 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
                             strokeWidth='2'
                             strokeLinecap='round'
                             strokeLinejoin='round'
-                            className='h-6 w-6 mr-3 text-red-500 flex-shrink-0'
+                            className='h-6 w-6 mr-3 text-red-500 shrink-0'
                           >
                             <line x1='18' y1='6' x2='6' y2='18'></line>
                             <line x1='6' y1='6' x2='18' y2='18'></line>
@@ -285,12 +285,12 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
                     </label>
                     <input
                       type='date'
-                      className='flex h-12 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50'
+                      className='flex h-12 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50'
                     />
                   </div>
                   <div className='space-y-3'>
                     <label className='text-sm font-medium'>Travelers</label>
-                    <select className='flex h-12 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50'>
+                    <select className='flex h-12 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50'>
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -307,7 +307,7 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
 
                 {/* Replace the "Inquire About This Tour" button */}
                 <OutlineButton className='w-full h-12 rounded-lg text-base font-medium'>
-                  <Link href={WHATSAPP_LINK} target='_blank'>
+                  <Link href={LINKS.WHATSAPP} target='_blank'>
                     Inquire About This Tour
                   </Link>
                 </OutlineButton>
@@ -346,7 +346,7 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
                     src={pkg.image || "/placeholder.svg"}
                     alt={pkg.title}
                   />
-                  <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80'></div>
+                  <div className='absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-80'></div>
                 </div>
                 <div className='travel-card-content'>
                   <div className='travel-card-location'>
