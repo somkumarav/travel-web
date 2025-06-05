@@ -39,7 +39,9 @@ export default function Home() {
             </p>
           </div>
           <div className='flex flex-col sm:flex-row gap-5'>
-            <PrimaryButton>Explore Packages</PrimaryButton>
+            <PrimaryButton>
+              <Link href='/'>Explore Packages</Link>
+            </PrimaryButton>
             <SecondaryButton className='text-white border-white'>
               <Link target='_blank' href={WHATSAPP_LINK}>
                 Contact Us
