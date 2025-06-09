@@ -11,6 +11,7 @@ import { travelPackages } from "@/lib/data";
 import { PrimaryButton, GhostButton } from "@/components/ui/button-variants";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { formatPrice } from "../../lib/utils";
 
 // Calculate min and max prices from data
 const minPrice = Math.min(...travelPackages.map((pkg) => pkg.price));
@@ -33,11 +34,6 @@ export default function PackagesPage() {
     { id: "8-14", label: "8-14 days" },
     { id: "15+", label: "15+ days" },
   ];
-
-  // Function to format price with rupee symbol and commas
-  const formatPrice = (price: number) => {
-    return `₹${price.toLocaleString("en-IN")}`;
-  };
 
   // Function to check if a package falls within a duration range
   const isInDurationRange = (duration: string, range: string): boolean => {

@@ -17,6 +17,7 @@ import { OutlineButton, GhostButton } from "@/components/ui/button-variants";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { LINKS } from "../../../lib/links";
+import { formatPrice } from "../../../lib/utils";
 
 export default function PackageDetail({ params }: { params: { id: string } }) {
   const packageData = getPackageById(params.id);
@@ -269,7 +270,7 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
               <div className='sticky top-24 bg-background border-none rounded-xl p-8 shadow-lg'>
                 <div className='mb-6'>
                   <div className='text-4xl font-bold text-primary mb-2'>
-                    {packageData.price}
+                    {formatPrice(packageData.price)}
                   </div>
                   <p className='text-muted-foreground'>per person</p>
                 </div>
@@ -358,7 +359,7 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
 
                   <div className='travel-card-footer'>
                     <div className='travel-card-price text-primary'>
-                      {pkg.price}
+                      {formatPrice(pkg.price)}
                     </div>
                     <div className='travel-card-duration bg-primary/10 text-primary'>
                       <Clock className='h-3 w-3 inline-block mr-1' />
