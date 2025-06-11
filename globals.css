@@ -1,0 +1,263 @@
+@import "tailwindcss";
+
+/* @source '../*.{js,ts,jsx,tsx,mdx}';
+@custom-variant dark (&:is(.dark *)); */
+
+@layer base {
+  :root {
+    --background: 48 20% 97%;
+    --foreground: 200 15% 15%;
+    --off-white: 48 20% 97%;
+
+    --card: 48 20% 97%;
+    --card-foreground: 200 15% 15%;
+
+    --popover: 48 20% 97%;
+    --popover-foreground: 200 15% 15%;
+
+    --primary: 200 65% 45%;
+    --primary-foreground: 200 40% 98%;
+
+    --secondary: 142 55% 35%;
+    --secondary-foreground: 142 40% 98%;
+
+    --muted: 200 20% 92%;
+    --muted-foreground: 200 15% 40%;
+
+    --accent: 170 60% 40%;
+    --accent-foreground: 170 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 200 15% 85%;
+    --input: 200 15% 85%;
+    --ring: 200 65% 45%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 200 15% 10%;
+    --foreground: 200 30% 98%;
+
+    --card: 200 15% 15%;
+    --card-foreground: 200 30% 98%;
+
+    --popover: 200 15% 15%;
+    --popover-foreground: 200 30% 98%;
+
+    --primary: 200 65% 45%;
+    --primary-foreground: 200 40% 98%;
+
+    --secondary: 142 55% 35%;
+    --secondary-foreground: 142 40% 98%;
+
+    --muted: 200 15% 20%;
+    --muted-foreground: 200 15% 70%;
+
+    --accent: 170 60% 40%;
+    --accent-foreground: 170 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 200 15% 25%;
+    --input: 200 15% 25%;
+    --ring: 200 65% 45%;
+  }
+}
+
+@theme {
+  --color-off-white: hsl(var(--off-white));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-brand-blue: #2b7ab8;
+  --color-brand-green: #2a8c4a;
+  --color-brand-teal: #29a99d;
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-float: float 5s ease-in-out infinite;
+  --animate-wave: wave 5s ease-in-out infinite;
+
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+  --background-image-brand-gradient: linear-gradient(
+    to right,
+    #2a8c4a,
+    #2b7ab8
+  );
+  --background-image-brand-gradient-soft: linear-gradient(
+    to right,
+    rgba(42, 140, 74, 0.8),
+    rgba(43, 122, 184, 0.8)
+  );
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes wave {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    padding-inline: 2rem;
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility travel-card {
+  @apply relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-lg;
+
+  &:hover .travel-card-image img {
+    @apply scale-110;
+  }
+}
+
+@utility travel-card-image {
+  @apply aspect-4/3 w-full overflow-hidden;
+
+  & img {
+    @apply w-full h-full object-cover transition-transform duration-500;
+  }
+
+  .travel-card:hover & img {
+    @apply scale-110;
+  }
+}
+
+@utility travel-card-badge {
+  @apply absolute top-4 right-4 z-10 px-3 py-1 text-xs font-semibold rounded-full;
+}
+
+@utility travel-card-content {
+  @apply p-5;
+}
+
+@utility travel-card-location {
+  @apply flex items-center text-sm text-muted-foreground mb-2;
+}
+
+@utility travel-card-footer {
+  @apply flex justify-between items-center mt-4;
+}
+
+@utility travel-card-price {
+  @apply text-xl font-bold;
+}
+
+@utility travel-card-duration {
+  @apply text-sm px-3 py-1 rounded-full;
+}
+
+@utility travel-gradient {
+  @apply bg-linear-to-r from-primary/80 to-secondary/80;
+}
+
+@utility travel-gradient-text {
+  @apply bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent;
+}
+
+@utility transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+}

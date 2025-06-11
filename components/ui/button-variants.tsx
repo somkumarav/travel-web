@@ -11,7 +11,7 @@ export function PrimaryButton({ className, children, ...props }: ButtonProps) {
   return (
     <Button
       className={cn(
-        "bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6 py-4 h-auto font-medium transition-all duration-300 transform hover:scale-[0.99]",
+        "bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6 py-4 h-auto font-medium transition-all duration-300 transform hover:scale-[0.99] cursor-pointer",
         className
       )}
       {...props}
@@ -29,7 +29,7 @@ export function SecondaryButton({
   return (
     <Button
       className={cn(
-        "bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-full px-6 py-4 h-auto font-medium transition-all duration-300 transform hover:scale-[0.99]",
+        "bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-full px-6 py-4 h-auto font-medium transition-all duration-300 transform hover:scale-[0.99] cursor-pointer",
         className
       )}
       {...props}

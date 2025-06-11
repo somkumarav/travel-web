@@ -11,6 +11,7 @@ import { travelPackages } from "@/lib/data";
 import { PrimaryButton, GhostButton } from "@/components/ui/button-variants";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { formatPrice } from "../../lib/utils";
 
 // Calculate min and max prices from data
 const minPrice = Math.min(...travelPackages.map((pkg) => pkg.price));
@@ -33,11 +34,6 @@ export default function PackagesPage() {
     { id: "8-14", label: "8-14 days" },
     { id: "15+", label: "15+ days" },
   ];
-
-  // Function to format price with rupee symbol and commas
-  const formatPrice = (price: number) => {
-    return `₹${price.toLocaleString("en-IN")}`;
-  };
 
   // Function to check if a package falls within a duration range
   const isInDurationRange = (duration: string, range: string): boolean => {
@@ -125,7 +121,7 @@ export default function PackagesPage() {
     <main className='flex min-h-screen flex-col'>
       {/* Hero section */}
       <section className='relative h-[55vh] w-full overflow-hidden'>
-        <div className='absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 z-10' />
+        <div className='absolute inset-0 bg-linear-to-b from-black/50 via-black/30 to-black/60 z-10' />
         <Image
           src='/packages-showcase.jpg'
           alt='Tour Packages'
@@ -153,7 +149,7 @@ export default function PackagesPage() {
           <div className='grid grid-cols-1 lg:grid-cols-4 gap-8'>
             {/* Filters sidebar */}
             <div className='lg:col-span-1'>
-              <div className='sticky top-24 space-y-8 bg-white p-6 rounded-xl shadow-sm'>
+              <div className='sticky top-24 space-y-8 bg-white p-6 rounded-xl shadow-xs'>
                 <div>
                   <h3 className='text-xl font-semibold mb-4'>Find Your Trip</h3>
                   <div className='relative'>
@@ -252,7 +248,7 @@ export default function PackagesPage() {
                             src={pkg.image || "/placeholder.svg"}
                             alt={pkg.title}
                           />
-                          <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80'></div>
+                          <div className='absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-80'></div>
                         </div>
                         <div className='travel-card-content'>
                           <div className='travel-card-location'>

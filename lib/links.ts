@@ -1,2 +1,4 @@
-export const WHATSAPP_LINK = "https://wa.me/+919567089997";
-export const MAILTO_LINK = "mailto:info@zenvia.com";
+export const LINKS = {
+  WHATSAPP: "https://wa.me/+919567089997",
+  MAILTO: "mailto:info@zenvia.com",
+};

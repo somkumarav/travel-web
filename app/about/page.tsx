@@ -1,8 +1,8 @@
 // Import the button variants at the top of the file
 import { PrimaryButton } from "@/components/ui/button-variants";
 import Link from "next/link";
-import { MAILTO_LINK, WHATSAPP_LINK } from "../../lib/links";
 import Image from "next/image";
+import { LINKS } from "../../lib/links";
 
 interface Feature {
   icon: string;
@@ -48,7 +48,7 @@ export default function AboutPage() {
     <main className='flex min-h-screen flex-col'>
       {/* Hero section */}
       <section className='relative h-[60vh] w-full overflow-hidden'>
-        <div className='absolute inset-0 bg-gradient-to-b from-black/70 to-black/30 z-10' />
+        <div className='absolute inset-0 bg-linear-to-b from-black/70 to-black/30 z-10' />
         <Image
           src='/about-showcase.jpg'
           alt='About Zenvia'
@@ -71,7 +71,7 @@ export default function AboutPage() {
       </section>
 
       {/* Main content section */}
-      <section className='py-24 bg-[#f8f7f4]'>
+      <section className='py-24 bg-off-white'>
         <div className='container mx-auto px-4 max-w-4xl'>
           <div className='prose prose-lg max-w-none'>
             <p className='text-xl leading-relaxed mb-8 text-muted-foreground'>
@@ -88,7 +88,7 @@ export default function AboutPage() {
               our seamless service and hospitality!
             </p>
 
-            <p className='text-2xl leading-relaxed mb-12 font-medium bg-gradient-to-r from-brand-green to-brand-blue bg-clip-text text-transparent'>
+            <p className='text-2xl leading-relaxed mb-12 font-medium bg-linear-to-r from-brand-green to-brand-blue bg-clip-text text-transparent'>
               Because at Zenvia, your journey should feel like your own.
             </p>
           </div>
@@ -96,15 +96,15 @@ export default function AboutPage() {
       </section>
 
       {/* Vision and Mission section */}
-      <section className='py-24 bg-gradient-to-r from-brand-green/[0.02] to-brand-blue/[0.02]'>
+      <section className='py-24 bg-linear-to-r from-brand-green/[0.02] to-brand-blue/[0.02]'>
         <div className='container mx-auto px-4'>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
-            <div className='group bg-[#f8f7f4] p-8 rounded-2xl shadow-sm transition-all duration-300 hover:shadow-lg'>
+            <div className='group bg-off-white p-8 rounded-2xl shadow-xs transition-all duration-300 hover:shadow-lg'>
               <div className='flex items-center mb-6'>
                 <div className='bg-brand-green/10 w-16 h-16 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform'>
                   <span className='text-3xl'>🌍</span>
                 </div>
-                <h2 className='text-3xl font-bold bg-gradient-to-r from-brand-green to-brand-blue bg-clip-text text-transparent'>
+                <h2 className='text-3xl font-bold bg-linear-to-r from-brand-green to-brand-blue bg-clip-text text-transparent'>
                   Our Vision
                 </h2>
               </div>
@@ -115,12 +115,12 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className='group bg-[#f8f7f4] p-8 rounded-2xl shadow-sm transition-all duration-300 hover:shadow-lg'>
+            <div className='group bg-off-white p-8 rounded-2xl shadow-xs transition-all duration-300 hover:shadow-lg'>
               <div className='flex items-center mb-6'>
                 <div className='bg-brand-blue/10 w-16 h-16 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform'>
                   <span className='text-3xl'>🚀</span>
                 </div>
-                <h2 className='text-3xl font-bold bg-gradient-to-r from-brand-green to-brand-blue bg-clip-text text-transparent'>
+                <h2 className='text-3xl font-bold bg-linear-to-r from-brand-green to-brand-blue bg-clip-text text-transparent'>
                   Our Mission
                 </h2>
               </div>
@@ -153,9 +153,9 @@ export default function AboutPage() {
       </section>
 
       {/* Features Grid */}
-      <section className='py-24 bg-[#f8f7f4]'>
+      <section className='py-24 bg-off-white'>
         <div className='container mx-auto px-4'>
-          <h2 className='text-4xl font-bold mb-16 text-center bg-gradient-to-r from-brand-green to-brand-blue bg-clip-text text-transparent'>
+          <h2 className='text-4xl font-bold mb-16 text-center bg-linear-to-r from-brand-green to-brand-blue bg-clip-text text-transparent'>
             What Makes Zenvia Different?
           </h2>
 
@@ -163,7 +163,7 @@ export default function AboutPage() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className='group p-8 rounded-2xl transition-all duration-300 hover:shadow-lg bg-gradient-to-r from-brand-green/[0.02] to-brand-blue/[0.02] hover:from-brand-green/[0.05] hover:to-brand-blue/[0.05]'
+                className='group p-8 rounded-2xl transition-all duration-300 hover:shadow-lg bg-linear-to-r from-brand-green/[0.02] to-brand-blue/[0.02] hover:from-brand-green/[0.05] hover:to-brand-blue/[0.05]'
               >
                 <div className='text-3xl mb-4 transform group-hover:scale-110 transition-transform'>
                   {feature.icon}
@@ -177,10 +177,10 @@ export default function AboutPage() {
       </section>
 
       {/* Testimonial section */}
-      <section className='py-24 bg-gradient-to-r from-brand-green/[0.02] to-brand-blue/[0.02]'>
+      <section className='py-24 bg-linear-to-r from-brand-green/[0.02] to-brand-blue/[0.02]'>
         <div className='container mx-auto px-4'>
-          <div className='max-w-3xl mx-auto bg-[#f8f7f4] p-8 rounded-2xl shadow-sm relative'>
-            <div className='absolute -top-6 left-8 w-12 h-12 bg-gradient-to-r from-brand-green to-brand-blue rounded-xl flex items-center justify-center'>
+          <div className='max-w-3xl mx-auto bg-off-white p-8 rounded-2xl shadow-xs relative'>
+            <div className='absolute -top-6 left-8 w-12 h-12 bg-linear-to-r from-brand-green to-brand-blue rounded-xl flex items-center justify-center'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 24 24'
@@ -205,7 +205,7 @@ export default function AboutPage() {
               </p>
 
               <div className='flex items-center'>
-                <div className='w-12 h-12 rounded-xl bg-gradient-to-r from-brand-green/10 to-brand-blue/10 mr-4 flex items-center justify-center font-bold text-brand-blue'>
+                <div className='w-12 h-12 rounded-xl bg-linear-to-r from-brand-green/10 to-brand-blue/10 mr-4 flex items-center justify-center font-bold text-brand-blue'>
                   MT
                 </div>
                 <div>
@@ -221,7 +221,7 @@ export default function AboutPage() {
       </section>
 
       {/* Contact section */}
-      <section className='py-24 bg-gradient-to-r from-brand-green to-brand-blue text-white'>
+      <section className='py-24 bg-linear-to-r from-brand-green to-brand-blue text-white'>
         <div className='container mx-auto px-4 text-center'>
           <h2 className='text-3xl font-bold mb-12'>
             Ready to Start Your Journey?
@@ -229,9 +229,9 @@ export default function AboutPage() {
 
           <div className='max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6'>
             <Link
-              href={WHATSAPP_LINK}
+              href={LINKS.WHATSAPP}
               target='_blank'
-              className='group bg-white/10 backdrop-blur-sm p-8 rounded-2xl transition-all duration-300 hover:bg-white/20'
+              className='group bg-white/10 backdrop-blur-xs p-8 rounded-2xl transition-all duration-300 hover:bg-white/20'
             >
               <div className='text-3xl mb-4 group-hover:scale-110 transition-transform'>
                 📞
@@ -241,8 +241,8 @@ export default function AboutPage() {
             </Link>
 
             <Link
-              href={MAILTO_LINK}
-              className='group bg-white/10 backdrop-blur-sm p-8 rounded-2xl transition-all duration-300 hover:bg-white/20'
+              href={LINKS.MAILTO}
+              className='group bg-white/10 backdrop-blur-xs p-8 rounded-2xl transition-all duration-300 hover:bg-white/20'
             >
               <div className='text-3xl mb-4 group-hover:scale-110 transition-transform'>
                 📧
@@ -251,7 +251,7 @@ export default function AboutPage() {
               <p className='text-white/80'>info@zenvia.com</p>
             </Link>
 
-            <div className='group bg-white/10 backdrop-blur-sm p-8 rounded-2xl transition-all duration-300 hover:bg-white/20'>
+            <div className='group bg-white/10 backdrop-blur-xs p-8 rounded-2xl transition-all duration-300 hover:bg-white/20'>
               <div className='text-3xl mb-4 group-hover:scale-110 transition-transform'>
                 🌐
               </div>
@@ -263,7 +263,7 @@ export default function AboutPage() {
           <div className='mt-12'>
             <PrimaryButton className='h-14 bg-white text-brand-blue hover:bg-white/90 transition-colors'>
               <Link
-                href={WHATSAPP_LINK}
+                href={LINKS.WHATSAPP}
                 target='_blank'
                 className='flex items-center gap-2'
               >

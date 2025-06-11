@@ -1,7 +1,6 @@
 "use client";
-
 import Link from "next/link";
-import { Play, MapPin, Calendar, Star, Check, ArrowRight } from "lucide-react";
+import { MapPin, Calendar, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   PrimaryButton,
@@ -9,7 +8,7 @@ import {
 } from "@/components/ui/button-variants";
 import { Card, CardContent } from "@/components/ui/card";
 import { getFeaturedPackages } from "@/lib/data";
-import { WHATSAPP_LINK } from "../lib/links";
+import { LINKS } from "../lib/links";
 
 export default function Home() {
   const packages = getFeaturedPackages(4);
@@ -18,7 +17,7 @@ export default function Home() {
     <main className='flex min-h-screen flex-col'>
       {/* Hero section with video */}
       <section className='relative h-screen w-full overflow-hidden'>
-        <div className='absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 z-10' />
+        <div className='absolute inset-0 bg-linear-to-b from-black/50 via-black/30 to-black/60 z-10' />
         <video
           className='absolute inset-0 w-full h-full object-cover'
           src='/landing-showcase.mp4'
@@ -43,7 +42,7 @@ export default function Home() {
               <Link href='/packages'>Explore Packages</Link>
             </PrimaryButton>
             <SecondaryButton className='text-white border-white'>
-              <Link target='_blank' href={WHATSAPP_LINK}>
+              <Link target='_blank' href={LINKS.WHATSAPP}>
                 Contact Us
               </Link>
             </SecondaryButton>
@@ -52,7 +51,7 @@ export default function Home() {
       </section>
 
       {/* Why Travel with Zenvia section */}
-      <section className='py-24 bg-[#f8f7f4]'>
+      <section className='py-24 bg-off-white'>
         <div className='container mx-auto px-4'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl md:text-5xl font-bold mb-6 travel-gradient-text'>
@@ -147,7 +146,7 @@ export default function Home() {
       </section>
 
       {/* Top Destinations section */}
-      <section className='py-24 bg-muted/30'>
+      <section className='py-24 bg-muted/20'>
         <div className='container mx-auto px-4'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl md:text-5xl font-bold mb-6 travel-gradient-text'>
@@ -172,7 +171,7 @@ export default function Home() {
                       src={pkg.image || "/placeholder.svg"}
                       alt={pkg.title}
                     />
-                    <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80'></div>
+                    <div className='absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-80'></div>
                   </div>
                   <div className='travel-card-content'>
                     <div className='travel-card-location'>
@@ -225,112 +224,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Special Offers section */}
-      <section className='py-24 bg-[#f8f7f4]'>
-        <div className='container mx-auto px-4'>
-          <div className='text-center mb-16'>
-            <h2 className='text-4xl md:text-5xl font-bold mb-6 travel-gradient-text'>
-              Special Offers
-            </h2>
-            <p className='text-muted-foreground max-w-2xl mx-auto text-lg'>
-              Take advantage of our limited-time deals and exclusive packages
-            </p>
-          </div>
-
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-            <div className='bg-muted rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300'>
-              <div className='flex flex-col md:flex-row'>
-                <div className='md:w-2/5 relative'>
-                  <img
-                    src='/placeholder.svg?height=400&width=300'
-                    alt='Early Bird Discount'
-                    className='w-full h-full object-cover'
-                  />
-                  <div className='absolute top-4 left-4 bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-medium'>
-                    20% OFF
-                  </div>
-                </div>
-                <div className='md:w-3/5 p-6 flex flex-col justify-between'>
-                  <div>
-                    <h3 className='text-xl font-bold mb-2'>
-                      Early Bird Discount
-                    </h3>
-                    <p className='text-muted-foreground mb-4'>
-                      Book any package 3 months in advance and get 20% off.
-                      Limited time offer!
-                    </p>
-                    <ul className='space-y-2 mb-4'>
-                      <li className='flex items-start'>
-                        <Check className='h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5' />
-                        <span>Valid on all international packages</span>
-                      </li>
-                      <li className='flex items-start'>
-                        <Check className='h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5' />
-                        <span>No hidden fees or charges</span>
-                      </li>
-                      <li className='flex items-start'>
-                        <Check className='h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5' />
-                        <span>
-                          Free cancellation up to 30 days before departure
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                  {/* Replace the "Book Now" buttons in the Special Offers section */}
-                  <PrimaryButton className='w-full md:w-auto'>
-                    Book Now <ArrowRight className='ml-2 h-4 w-4' />
-                  </PrimaryButton>
-                </div>
-              </div>
-            </div>
-
-            <div className='bg-muted rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300'>
-              <div className='flex flex-col md:flex-row'>
-                <div className='md:w-2/5 relative'>
-                  <img
-                    src='/placeholder.svg?height=400&width=300'
-                    alt='Group Discount'
-                    className='w-full h-full object-cover'
-                  />
-                  <div className='absolute top-4 left-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-medium'>
-                    SPECIAL
-                  </div>
-                </div>
-                <div className='md:w-3/5 p-6 flex flex-col justify-between'>
-                  <div>
-                    <h3 className='text-xl font-bold mb-2'>Group Discount</h3>
-                    <p className='text-muted-foreground mb-4'>
-                      Book for a group of 5 or more and get one person free.
-                      Perfect for family trips!
-                    </p>
-                    <ul className='space-y-2 mb-4'>
-                      <li className='flex items-start'>
-                        <Check className='h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5' />
-                        <span>Valid on all packages over 5 days</span>
-                      </li>
-                      <li className='flex items-start'>
-                        <Check className='h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5' />
-                        <span>Includes all accommodations and activities</span>
-                      </li>
-                      <li className='flex items-start'>
-                        <Check className='h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5' />
-                        <span>Special group activities included</span>
-                      </li>
-                    </ul>
-                  </div>
-                  {/* Replace the second "Book Now" button */}
-                  <PrimaryButton className='w-full md:w-auto'>
-                    Book Now <ArrowRight className='ml-2 h-4 w-4' />
-                  </PrimaryButton>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials section */}
-      <section className='py-24 bg-muted/20'>
+      <section className='py-24 bg-off-white'>
         <div className='container mx-auto px-4'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl md:text-5xl font-bold mb-6 travel-gradient-text'>
@@ -342,7 +237,7 @@ export default function Home() {
           </div>
 
           <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-            <div className='bg-[#f8f7f4] p-8 rounded-2xl shadow-md relative'>
+            <div className='bg-off-white p-8 rounded-2xl shadow-md relative'>
               <div className='absolute -top-5 left-8 w-10 h-10 bg-secondary rounded-full flex items-center justify-center'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -377,7 +272,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className='bg-[#f8f7f4] p-8 rounded-2xl shadow-md relative'>
+            <div className='bg-off-white p-8 rounded-2xl shadow-md relative'>
               <div className='absolute -top-5 left-8 w-10 h-10 bg-secondary rounded-full flex items-center justify-center'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -389,7 +284,7 @@ export default function Home() {
                   strokeWidth='0'
                   className='text-white'
                 >
-                  <path d='M11.192 15.757c0-.88-.23-1.618-.69-2.217-.326-.412-.768-.683-1.327-.812-.55-.128-1.07-.137-1.54-.028-.16-.95.1-1.626.41-2.223.315-.598.795-1.148 1.44-1.65.41-.334.915-.97 1.511-1.906.315-.47.256-1.02-.135-1.51-.39-.49-.96-.588-1.708-.294l-.126.075c-.285.174-.492.372-.623.595l-.115.195c-.127.215-.19.438-.19.665 0 .235.07.404.211.503l.924.68c.133.098.2.238.2.417 0 .18-.067.319-.2.417-.194.14-.681.44-1.46.9-.59.36-1.098.769-1.522 1.228s-.739.959-.943 1.49-.305 1.12-.296 1.75c.01.644.167 1.203.477 1.685.315.488.76.870 1.333 1.147.583.276 1.225.414 1.927.414.602 0 1.15-.135 1.645-.405.495-.27.892-.646 1.192-1.133.3-.487.449-1.077.449-1.766z' />
+                  <path d='M11.192 15.757c0-.88-.23-1.618-.69-2.217-.326-.412-.768-.683-1.327-.812-.55-.128-1.07-.137-1.54-.028-.16-.95.1-1.626.41-2.223.315-.598.795-1.148 1.44-1.65.41-.334.915-.97 1.511-1.906.315-.47.256-1.02-.135-1.51-.39-.49-.96-.588-1.708-.294l-.126.075c-.285.174-.492.372-.623.595l-.115.195c-.127.215-.19.438-.19.665 0 .235.07.404.211.503l.924.68c.133.098.2.238.2.417 0 .18-.067.319-.2.417-.194.14-.681.44-1.46.9-.59.36-1.098.769-1.522 1.228s-.739.959-.943 1.49-.305 1.12-.296 1.75c.01.644.167 1.203.477 1.685.315.488.76.870 1.333 1.147.583.276 1.225.414 1.927.414.602 0 1.15-.135 1.645-.405.495-.27.892-.646 1.192-1.133.3-.487.449-1.077.449-1.766zm9.695 0c0-.88-.23-1.618-.69-2.217-.326-.42-.77-.692-1.327-.812-.55-.137-1.07-.146-1.54-.028-.16-.95.1-1.626.41-2.223.315-.598.795-1.148 1.44-1.65.41-.334.915-.97 1.511-1.906.315-.47.256-1.02-.135-1.51-.39-.49-.96-.588-1.708-.294l-.126.075c-.285.174-.492.372-.623.595l-.115.195c-.127.215-.19.438-.19.665 0 .235.07.404.211.503l.924.68c.133.098.2.238.2.417 0 .18-.067.319-.2.417-.194.14-.681.44-1.46.9-.59.36-1.098.769-1.522 1.228s-.739.959-.943 1.49-.305 1.12-.296 1.75c.01.644.167 1.203.477 1.685.315.488.76.870 1.333 1.147.583.276 1.225.414 1.927.414.602 0 1.15-.135 1.645-.405.495-.27.892-.646 1.192-1.133.3-.487.449-1.077.449-1.766z' />
                 </svg>
               </div>
               <div className='pt-6'>
@@ -412,7 +307,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className='bg-[#f8f7f4] p-8 rounded-2xl shadow-md relative'>
+            <div className='bg-off-white p-8 rounded-2xl shadow-md relative'>
               <div className='absolute -top-5 left-8 w-10 h-10 bg-secondary rounded-full flex items-center justify-center'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -424,7 +319,7 @@ export default function Home() {
                   strokeWidth='0'
                   className='text-white'
                 >
-                  <path d='M11.192 15.757c0-.88-.23-1.618-.69-2.217-.326-.412-.768-.683-1.327-.812-.55-.128-1.07-.137-1.54-.028-.16-.95.1-1.626.41-2.223.315-.598.795-1.148 1.44-1.65.41-.334.915-.97 1.511-1.906.315-.47.256-1.02-.135-1.51-.39-.49-.96-.588-1.708-.294l-.126.075c-.285.174-.492.372-.623.595l-.115.195c-.127.215-.19.438-.19.665 0 .235.07.404.211.503l.924.68c.133.098.2.238.2.417 0 .18-.067.319-.2.417-.194.14-.681.44-1.46.9-.59.36-1.098.769-1.522 1.228s-.739.959-.943 1.49-.305 1.12-.296 1.75c.01.644.167 1.203.477 1.685.315.488.76.870 1.333 1.147.583.276 1.225.414 1.927.414.602 0 1.15-.135 1.645-.405.495-.27.892-.646 1.192-1.133.3-.487.449-1.077.449-1.766z' />
+                  <path d='M11.192 15.757c0-.88-.23-1.618-.69-2.217-.326-.412-.768-.683-1.327-.812-.55-.128-1.07-.137-1.54-.028-.16-.95.1-1.626.41-2.223.315-.598.795-1.148 1.44-1.65.41-.334.915-.97 1.511-1.906.315-.47.256-1.02-.135-1.51-.39-.49-.96-.588-1.708-.294l-.126.075c-.285.174-.492.372-.623.595l-.115.195c-.127.215-.19.438-.19.665 0 .235.07.404.211.503l.924.68c.133.098.2.238.2.417 0 .18-.067.319-.2.417-.194.14-.681.44-1.46.9-.59.36-1.098.769-1.522 1.228s-.739.959-.943 1.49-.305 1.12-.296 1.75c.01.644.167 1.203.477 1.685.315.488.76.870 1.333 1.147.583.276 1.225.414 1.927.414.602 0 1.15-.135 1.645-.405.495-.27.892-.646 1.192-1.133.3-.487.449-1.077.449-1.766zm9.695 0c0-.88-.23-1.618-.69-2.217-.326-.42-.77-.692-1.327-.812-.55-.137-1.07-.146-1.54-.028-.16-.95.1-1.626.41-2.223.315-.598.795-1.148 1.44-1.65.41-.334.915-.97 1.511-1.906.315-.47.256-1.02-.135-1.51-.39-.49-.96-.588-1.708-.294l-.126.075c-.285.174-.492.372-.623.595l-.115.195c-.127.215-.19.438-.19.665 0 .235.07.404.211.503l.924.68c.133.098.2.238.2.417 0 .18-.067.319-.2.417-.194.14-.681.44-1.46.9-.59.36-1.098.769-1.522 1.228s-.739.959-.943 1.49-.305 1.12-.296 1.75c.01.644.167 1.203.477 1.685.315.488.76.870 1.333 1.147.583.276 1.225.414 1.927.414.602 0 1.15-.135 1.645-.405.495-.27.892-.646 1.192-1.133.3-.487.449-1.077.449-1.766z' />
                 </svg>
               </div>
               <div className='pt-6'>
@@ -452,7 +347,7 @@ export default function Home() {
       </section>
 
       {/* Easy Booking Section */}
-      <section className='py-24 bg-[#f8f7f4]'>
+      <section className='py-24 bg-muted/20'>
         <div className='container mx-auto px-4'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl md:text-5xl font-bold mb-6 travel-gradient-text'>
@@ -672,16 +567,16 @@ export default function Home() {
             <div>
               <h3 className='text-lg font-semibold mb-4'>We Accept</h3>
               <div className='flex flex-wrap gap-2'>
-                <div className='bg-[#f8f7f4] text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
+                <div className='bg-off-white text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
                   VISA
                 </div>
-                <div className='bg-[#f8f7f4] text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
+                <div className='bg-off-white text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
                   MASTERCARD
                 </div>
-                <div className='bg-[#f8f7f4] text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
+                <div className='bg-off-white text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
                   AMEX
                 </div>
-                <div className='bg-[#f8f7f4] text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
+                <div className='bg-off-white text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
                   PAYPAL
                 </div>
               </div>
