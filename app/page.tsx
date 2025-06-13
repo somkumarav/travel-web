@@ -9,6 +9,7 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { getFeaturedPackages } from "@/lib/data";
 import { LINKS } from "../lib/links";
+import { formatPrice } from "../lib/utils";
 
 export default function Home() {
   const packages = getFeaturedPackages(4);
@@ -187,7 +188,7 @@ export default function Home() {
 
                     <div className='travel-card-footer'>
                       <div className='travel-card-price text-primary'>
-                        {pkg.price}
+                        {formatPrice(pkg.price)}
                       </div>
                       <div className='travel-card-duration bg-primary/10 text-primary'>
                         <Calendar className='h-3 w-3 inline-block mr-1' />
