@@ -52,7 +52,7 @@ export default function Home() {
       </section>
 
       {/* Why Travel with Zenvia section */}
-      <section className='py-24 bg-off-white'>
+      <section className='py-24 bg-background'>
         <div className='container mx-auto px-4'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl md:text-5xl font-bold mb-6 travel-gradient-text'>
@@ -161,7 +161,7 @@ export default function Home() {
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
             {packages.map((pkg) => (
               <Link href={`/packages/${pkg.id}`} key={pkg.id} className='block'>
-                <div className='travel-card group bg-white'>
+                <div className='travel-card group bg-card'>
                   {pkg.featured && (
                     <div className='travel-card-badge bg-secondary text-secondary-foreground'>
                       Featured
@@ -216,7 +216,6 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Replace the "View All Destinations" button */}
           <div className='mt-16 text-center'>
             <Link href='/packages'>
               <SecondaryButton>View All Destinations</SecondaryButton>
@@ -226,7 +225,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials section */}
-      <section className='py-24 bg-off-white'>
+      <section className='py-24 bg-background'>
         <div className='container mx-auto px-4'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl md:text-5xl font-bold mb-6 travel-gradient-text'>
@@ -238,7 +237,7 @@ export default function Home() {
           </div>
 
           <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-            <div className='bg-off-white p-8 rounded-2xl shadow-md relative'>
+            <div className='bg-card p-8 rounded-2xl shadow-md relative'>
               <div className='absolute -top-5 left-8 w-10 h-10 bg-secondary rounded-full flex items-center justify-center'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -273,7 +272,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className='bg-off-white p-8 rounded-2xl shadow-md relative'>
+            <div className='bg-card p-8 rounded-2xl shadow-md relative'>
               <div className='absolute -top-5 left-8 w-10 h-10 bg-secondary rounded-full flex items-center justify-center'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -308,7 +307,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className='bg-off-white p-8 rounded-2xl shadow-md relative'>
+            <div className='bg-card p-8 rounded-2xl shadow-md relative'>
               <div className='absolute -top-5 left-8 w-10 h-10 bg-secondary rounded-full flex items-center justify-center'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -320,7 +319,7 @@ export default function Home() {
                   strokeWidth='0'
                   className='text-white'
                 >
-                  <path d='M11.192 15.757c0-.88-.23-1.618-.69-2.217-.326-.412-.768-.683-1.327-.812-.55-.128-1.07-.137-1.54-.028-.16-.95.1-1.626.41-2.223.315-.598.795-1.148 1.44-1.65.41-.334.915-.97 1.511-1.906.315-.47.256-1.02-.135-1.51-.39-.49-.96-.588-1.708-.294l-.126.075c-.285.174-.492.372-.623.595l-.115.195c-.127.215-.19.438-.19.665 0 .235.07.404.211.503l.924.68c.133.098.2.238.2.417 0 .18-.067.319-.2.417-.194.14-.681.44-1.46.9-.59.36-1.098.769-1.522 1.228s-.739.959-.943 1.49-.305 1.12-.296 1.75c.01.644.167 1.203.477 1.685.315.488.76.870 1.333 1.147.583.276 1.225.414 1.927.414.602 0 1.15-.135 1.645-.405.495-.27.892-.646 1.192-1.133.3-.487.449-1.077.449-1.766zm9.695 0c0-.88-.23-1.618-.69-2.217-.326-.42-.77-.692-1.327-.812-.55-.137-1.07-.146-1.54-.028-.16-.95.1-1.626.41-2.223.315-.598.795-1.148 1.44-1.65.41-.334.915-.97 1.511-1.906.315-.47.256-1.02-.135-1.51-.39-.49-.96-.588-1.708-.294l-.126.075c-.285.174-.492.372-.623.595l-.115.195c-.127.215-.19.438-.19.665 0 .235.07.404.211.503l.924.68c.133.098.2.238.2.417 0 .18-.067.319-.2.417-.194.14-.681.44-1.46.9-.59.36-1.098.769-1.522 1.228s-.739.959-.943 1.49-.305 1.12-.296 1.75c.01.644.167 1.203.477 1.685.315.488.76.870 1.333 1.147.583.276 1.225.414 1.927.414.602 0 1.15-.135 1.645-.405.495-.27.892-.646 1.192-1.133.3-.487.449-1.077.449-1.766z' />
+                  <path d='M11.192 15.757c0-.88-.23-1.618-.69-2.217-.326-.412-.768-.683-1.327-.812-.55-.128-1.07-.137-1.54-.028-.16-.95.1-1.626.41-2.223.315-.598.795-1.148 1.44-1.65.41-.334.915-.97 1.511-1.906.315-.47.256-1.02-.135-1.51-.39-.49-.96-.588-1.708-.294l-.126.075c-.285.174-.492.372-.623.595l-.115.195c-.127.215-.19.438-.19.665 0 .235.07.404.211.503l.924.68c.133.098.2.238.2.417 0 .18-.067.319-.2.417-.194.14-.681.44-1.46.9-.59.36-1.098.769-1.522 1.228s-.739.959-.943 1.49-.305 1.12-.296 1.75c.01.644.167 1.203.477 1.685.315.488.76.870 1.333 1.147.583.276 1.225.414 1.927.414.602 0 1.15-.135 1.645-.405.495-.27.892-.646 1.192-1.133.3-.487.449-1.077.449-1.766z' />
                 </svg>
               </div>
               <div className='pt-6'>
@@ -568,16 +567,16 @@ export default function Home() {
             <div>
               <h3 className='text-lg font-semibold mb-4'>We Accept</h3>
               <div className='flex flex-wrap gap-2'>
-                <div className='bg-off-white text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
+                <div className='bg-card text-card-foreground rounded px-2 py-1 text-xs font-semibold'>
                   VISA
                 </div>
-                <div className='bg-off-white text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
+                <div className='bg-card text-card-foreground rounded px-2 py-1 text-xs font-semibold'>
                   MASTERCARD
                 </div>
-                <div className='bg-off-white text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
+                <div className='bg-card text-card-foreground rounded px-2 py-1 text-xs font-semibold'>
                   AMEX
                 </div>
-                <div className='bg-off-white text-gray-900 rounded px-2 py-1 text-xs font-semibold'>
+                <div className='bg-card text-card-foreground rounded px-2 py-1 text-xs font-semibold'>
                   PAYPAL
                 </div>
               </div>

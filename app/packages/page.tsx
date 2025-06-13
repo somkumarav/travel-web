@@ -149,7 +149,7 @@ export default function PackagesPage() {
           <div className='grid grid-cols-1 lg:grid-cols-4 gap-8'>
             {/* Filters sidebar */}
             <div className='lg:col-span-1'>
-              <div className='sticky top-24 space-y-8 bg-white p-6 rounded-xl shadow-xs'>
+              <div className='sticky top-24 space-y-8 bg-card p-6 rounded-xl shadow-xs'>
                 <div>
                   <h3 className='text-xl font-semibold mb-4'>Find Your Trip</h3>
                   <div className='relative'>
@@ -239,7 +239,7 @@ export default function PackagesPage() {
                       key={pkg.id}
                       className='block'
                     >
-                      <div className='travel-card group bg-white'>
+                      <div className='travel-card group bg-card'>
                         <div className='travel-card-badge bg-secondary text-secondary-foreground'>
                           {pkg.category}
                         </div>

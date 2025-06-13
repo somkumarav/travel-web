@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -18,10 +20,19 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { LINKS } from "../../../lib/links";
 import { formatPrice } from "../../../lib/utils";
+import React from "react";
 
-export default function PackageDetail({ params }: { params: { id: string } }) {
-  const packageData = getPackageById(params.id);
-  const relatedPackages = getRelatedPackages(Number.parseInt(params.id, 10), 3);
+export default function PackageDetail({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const unwrappedParams = React.use(params);
+  const packageData = getPackageById(unwrappedParams.id);
+  const relatedPackages = getRelatedPackages(
+    Number.parseInt(unwrappedParams.id, 10),
+    3
+  );
 
   if (!packageData) {
     return (
@@ -90,16 +101,28 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
             <div className='lg:col-span-2'>
               <Tabs defaultValue='overview' className='w-full'>
                 <TabsList className='w-full justify-start mb-10 bg-muted/30 p-1 rounded-full'>
-                  <TabsTrigger value='overview' className='rounded-full'>
+                  <TabsTrigger
+                    value='overview'
+                    className='rounded-full cursor-pointer'
+                  >
                     Overview
                   </TabsTrigger>
-                  <TabsTrigger value='itinerary' className='rounded-full'>
+                  <TabsTrigger
+                    value='itinerary'
+                    className='rounded-full cursor-pointer'
+                  >
                     Itinerary
                   </TabsTrigger>
-                  <TabsTrigger value='inclusions' className='rounded-full'>
+                  <TabsTrigger
+                    value='inclusions'
+                    className='rounded-full cursor-pointer'
+                  >
                     Inclusions
                   </TabsTrigger>
-                  <TabsTrigger value='gallery' className='rounded-full'>
+                  <TabsTrigger
+                    value='gallery'
+                    className='rounded-full cursor-pointer'
+                  >
                     Gallery
                   </TabsTrigger>
                 </TabsList>
@@ -266,54 +289,76 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
               </Tabs>
             </div>
 
-            <div>
-              <div className='sticky top-24 bg-background border-none rounded-xl p-8 shadow-lg'>
+            {/* Booking form */}
+            <div className='lg:col-span-1'>
+              <div className='sticky top-24 bg-card p-6 rounded-xl shadow-xs'>
                 <div className='mb-6'>
-                  <div className='text-4xl font-bold text-primary mb-2'>
+                  <div className='text-3xl font-bold text-primary mb-2'>
                     {formatPrice(packageData.price)}
                   </div>
                   <p className='text-muted-foreground'>per person</p>
                 </div>
 
                 <div className='space-y-6 mb-8'>
-                  <div className='space-y-3'>
-                    <label className='text-sm font-medium'>
-                      Departure Date
-                    </label>
-                    <input
-                      type='date'
-                      className='flex h-12 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50'
-                    />
+                  <div className='flex items-center gap-3 text-muted-foreground'>
+                    <Clock className='h-5 w-5 text-primary' />
+                    <span>{packageData.duration}</span>
                   </div>
-                  <div className='space-y-3'>
-                    <label className='text-sm font-medium'>Travelers</label>
-                    <select className='flex h-12 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50'>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5+</option>
-                    </select>
+                  <div className='flex items-center gap-3 text-muted-foreground'>
+                    <Users className='h-5 w-5 text-primary' />
+                    <span>Group Size: {packageData.groupSize}</span>
+                  </div>
+                  <div className='flex items-center gap-3 text-muted-foreground'>
+                    <Star className='h-5 w-5 text-yellow-400 fill-yellow-400' />
+                    <span>Rating: {packageData.rating}</span>
+                  </div>
+                  <div className='flex items-center gap-3 text-muted-foreground'>
+                    <MapPin className='h-5 w-5 text-primary' />
+                    <span>{packageData.location}</span>
                   </div>
                 </div>
 
-                {/* Replace the "Book Now" button */}
-                {/* <PrimaryButton className='w-full h-12 rounded-lg mb-4 text-base font-medium'>
-                  Book Now
-                </PrimaryButton> */}
+                <div className='border-t border-border pt-6 mb-8'>
+                  <h3 className='font-semibold mb-4'>Package Includes:</h3>
+                  <ul className='space-y-3'>
+                    {packageData.inclusions?.slice(0, 4).map((item, index) => (
+                      <li
+                        key={index}
+                        className='flex items-start gap-2 text-sm text-muted-foreground'
+                      >
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          width='16'
+                          height='16'
+                          viewBox='0 0 24 24'
+                          fill='none'
+                          stroke='currentColor'
+                          strokeWidth='2'
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                          className='h-4 w-4 text-green-500 shrink-0 mt-0.5'
+                        >
+                          <polyline points='20 6 9 17 4 12'></polyline>
+                        </svg>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                {/* Replace the "Inquire About This Tour" button */}
-                <OutlineButton className='w-full h-12 rounded-lg text-base font-medium'>
+                <OutlineButton className='w-full h-12 rounded-lg text-base font-medium mb-6'>
                   <Link href={LINKS.WHATSAPP} target='_blank'>
                     Inquire About This Tour
                   </Link>
                 </OutlineButton>
 
-                <div className='mt-8 text-center'>
-                  <p className='text-sm text-muted-foreground mb-1'>
-                    Need help planning your trip?
-                  </p>
-                  <p className='font-medium text-lg'>Call us at 8111828967</p>
+                <div className='space-y-4 text-center'>
+                  <div className='p-4 rounded-lg'>
+                    <p className='text-sm text-muted-foreground mb-1'>
+                      Need help planning your trip?
+                    </p>
+                    <p className='font-medium text-lg'>Call us at 8111828967</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -330,7 +375,7 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
               <Link
                 href={`/packages/${pkg.id}`}
                 key={pkg.id}
-                className='travel-card group bg-white'
+                className='travel-card group bg-card'
               >
                 <div className='travel-card-badge bg-secondary text-secondary-foreground'>
                   {pkg.category}
@@ -365,16 +410,6 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
                       <Clock className='h-3 w-3 inline-block mr-1' />
                       {pkg.duration}
                     </div>
-                  </div>
-
-                  <div className='mt-4 flex items-center justify-between'>
-                    <div className='flex items-center'>
-                      <Star className='h-4 w-4 text-secondary fill-secondary' />
-                      <span className='ml-1 text-sm font-medium'>
-                        {pkg.rating}
-                      </span>
-                    </div>
-                    <GhostButton className='p-0'>View Details →</GhostButton>
                   </div>
                 </div>
               </Link>
