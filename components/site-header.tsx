@@ -15,10 +15,10 @@ export const SiteHeader = () => {
             alt='Zenvia Logo'
             width={100}
             height={100}
-            className='h-[75px] w-auto'
+            className='h-[50px] md:h-[75px] w-auto'
           />
         </Link>
-        <nav className='ml-auto flex items-center gap-6'>
+        <nav className='ml-auto flex items-center gap-4 md:gap-6'>
           <Link
             href='/packages'
             className='text-xs md:text-sm font-medium relative group text-foreground'
